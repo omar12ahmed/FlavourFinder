@@ -1,0 +1,20 @@
+/* food.css */
+.recipe-list {
+  list-style-type: none;
+}
+
+.recipe-list li {
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+
+.recipe-list li:hover {
+  color: #fff;
+  background-color: #cbcbcb;
+}
+
+.bold-label {
+  font-weight: bold;
+}
