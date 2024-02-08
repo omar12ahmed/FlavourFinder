@@ -1,5 +1,18 @@
 .baner {
     background-image: url('../assets/images/images8.jpg');
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
+    
+}
+.jumbo-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+.text-box {
+    
+}
+.API-buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
