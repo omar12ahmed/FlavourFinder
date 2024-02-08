@@ -1,13 +1,20 @@
-function 
-HomeContent(){
+import 'bootstrap/dist/css/bootstrap.min.css';
+import * as bootstrap from 'bootstrap';
+import './styles/HomeContent.css'
+function
+    HomeContent() {
 
-
-    return(
-        <div>
-            <h1>title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quae maxime minus odit nisi repudiandae dolorem similique expedita quos? Consequatur velit minima quisquam consequuntur pariatur nulla veniam exercitationem repudiandae voluptatibus?</p>
-            <button> serach for a recipe </button>
-        </div>
+    return (
+        <wrapper>
+             <div className="p-5 mb-4 bg-body-tertiary rounded-3 ">
+      <div className="container-fluid py-5 jumboCopy baner">
+        <h1 className="display-5 fw-bold">Flavour Finder</h1>
+        <p className="col-md-12 fs-4">The tastiest recipes on the Internet</p>
+        
+      </div>
+    </div>
+    <button className="btn btn-primary btn-lg" type="button">Find your next dinner!</button>
+        </wrapper>
     )
 }
 
