@@ -5,7 +5,7 @@ function
     HomeContent() {
 
     return (
-        <wrapper>
+        <section>
             {/* jumbotron */}
             <div className="p-5 mb-4 bg-body-tertiary rounded-3 baner">
                 <div className="container-fluid py-5 jumboCopy jumbo-box">
@@ -22,11 +22,22 @@ function
                     discover the joy of cooking with our enticing recipe selection. What's on your plate today?</p>
                 {/* button - conected to API */}
                 <div className='API-buttons'>
-                    <button className="btn btn-primary btn-lg" type="button">Find your next dinner!</button>
-                    <button className="btn btn-primary btn-lg" type="button">Find your next drink!</button>
+                    <button className="btn btn-primary btn-lg button" type="button">Find your next dinner!</button>
+                    <button className="btn btn-primary btn-lg button" type="button">Find your next drink!</button>
                 </div>
             </div>
-        </wrapper>
+            <section className='category-grid'>
+                <div id="pasta1" className="categoryGridArea food"></div>
+                <div id="mexican" className="categoryGridArea food"></div>
+                <div id="aperol" className="categoryGridArea food"></div>
+                <div id="pimm" className="categoryGridArea food"></div>
+                <div id="pimm2" className="categoryGridArea food"></div>
+                <div id="b-mary" className="categoryGridArea food"></div>
+                <div id="pancakes" className="categoryGridArea food"></div>
+                <div id="curry" className="categoryGridArea food"></div>
+                <div id="pasta2" className="categoryGridArea food"></div>
+            </section>
+        </section>
     )
 }
 
