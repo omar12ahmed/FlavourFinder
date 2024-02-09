@@ -87,7 +87,7 @@ function Recipe() {
 	};
 
 	return (
-		<div className="container-fluid vh-100 d-flex">
+		<div className="container-fluid vh-100 d-flex mt-5">
 			<div className="container-fluid">
 				<SearchBar
 					searchTerm={searchTerm}

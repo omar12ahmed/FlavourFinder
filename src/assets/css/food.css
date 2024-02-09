@@ -42,3 +42,20 @@
     color: #86C166;
 }
 
+.custom-title {
+  background-color:#86C166;
+  padding: 0.5rem 1.5rem;
+}
+
+.custom-btn {
+  background-color:#86C166;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.custom-btn:hover {
+  background-color: #b1f08f;
+  color: #4D5139;
+}
