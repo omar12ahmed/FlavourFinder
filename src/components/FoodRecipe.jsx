@@ -7,6 +7,12 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/food.css";
 
+//Capitalize first letter of each word, fix defult lowercase
+function capitalizeFirstLetter(string) {
+	return string.replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+//Food Recipe card
 function FoodRecipe({ recipe }) {
 	return (
 		<div className="card p-0 shadow-sm">
@@ -21,7 +27,7 @@ function FoodRecipe({ recipe }) {
 						</div>
 						
 						<div className="me-4">
-							<span>{recipe.cuisineType}</span>
+							<span>{recipe.cuisineType.map((s) => capitalizeFirstLetter(s))}</span>
 						</div> 
 
 						<div className="recipeIconText">
