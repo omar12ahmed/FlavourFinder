@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
@@ -7,8 +6,8 @@ import Home from './components/Pages/Home';
 import Contact from './components/Pages/Contact';
 import Drinks from './components/Pages/Drinks';
 import Recipe from './components/Pages/Recipe';
-
-
+import ContactPage from './components/ConatctPage';
+import "../src/assets/css/food.css";
 
 function App() {
   return (
@@ -27,6 +26,8 @@ function App() {
       </Router>
 
       <h1>flavour finder</h1>
+      <ContactPage/>
+    
     </div>
   );
 }

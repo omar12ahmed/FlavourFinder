@@ -18,3 +18,16 @@
 .bold-label {
   font-weight: bold;
 }
+  
+.contactPage{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../src/assets/images/contact-page.jpg");
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
