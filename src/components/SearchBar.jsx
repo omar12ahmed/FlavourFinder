@@ -1,9 +1,17 @@
 // SearchBar.jsx
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ searchTerm, onChange, onSearch }) {
+
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		// Focus the input field
+		inputRef.current.focus();
+	}, []);
+
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {
 			event.preventDefault();
@@ -16,6 +24,7 @@ function SearchBar({ searchTerm, onChange, onSearch }) {
 			<div style={{ position: "relative", width: "100%" }}>
 				{/* input bar */}
 				<input
+					ref={inputRef}
 					type="text"
 					placeholder="Search for recipes..."
 					value={searchTerm}

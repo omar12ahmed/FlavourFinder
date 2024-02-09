@@ -7,7 +7,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/food.css";
 
-//Capitalize first letter of each word, fix defult lowercase
+//Forcing first letter to be uppercase
 function capitalizeFirstLetter(string) {
 	return string.replace(/\b\w/g, (char) => char.toUpperCase());
 }
@@ -47,7 +47,7 @@ function FoodRecipe({ recipe }) {
 				<ul style={{ textAlign: "left" }}>
 					{recipe.ingredients &&
 						recipe.ingredients.map((ingredient, index) => (
-							<li key={index}>{ingredient.text.replace("*", "")}</li> //Remove asterisks in defult data
+							<li key={index}>{ingredient.text.replace("*", "")}</li> //Remove asterisks in default data
 						))}
 				</ul>
 
