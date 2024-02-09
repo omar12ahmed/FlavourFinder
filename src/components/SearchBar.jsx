@@ -14,7 +14,7 @@ function SearchBar({ searchTerm, onChange, onSearch }) {
 	return (
 		<div className="p-3 border-bottom" style={{ width: "100%" }}>
 			<div style={{ position: "relative", width: "100%" }}>
-        {/* input bar */}
+				{/* input bar */}
 				<input
 					type="text"
 					placeholder="Search for recipes..."
@@ -24,7 +24,7 @@ function SearchBar({ searchTerm, onChange, onSearch }) {
 					style={{ width: "100%", height: "40px", paddingLeft: "10px" }}
 				/>
 
-        {/* search button */}
+				{/* search button */}
 				<FontAwesomeIcon
 					icon={faSearch}
 					style={{

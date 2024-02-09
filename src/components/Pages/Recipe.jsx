@@ -98,6 +98,7 @@ function Recipe() {
 				<FoodRecipeList
 					recipes={recipes.slice(0, 6)}
 					onSelect={handleRecipeSelect}
+					searchTerm={searchTerm}
 				/>
 				<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 g-3">
 					{/* Display the selected recipe */}

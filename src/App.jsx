@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+
 import Recipe from './components/Pages/Recipe'
 
 function App() {
