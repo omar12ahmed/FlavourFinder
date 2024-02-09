@@ -1,0 +1,81 @@
+.baner {
+    background-image: url('../assets/images/images8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.jumbo-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+.text-box {
+    
+}
+.API-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons {
+    /* color: ;  color TBD*/
+}
+.category-grid {
+    margin: 3% auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px 300px;
+    grid-template-areas:
+    "aperol mexican mexican"
+    "pasta1 pimm pancakes"
+    "b-mary pimm pancakes"
+    "curry pimm2 pasta2" ;
+}
+
+#pasta1 {
+    grid-area: pasta1;
+    background-image: url("../assets/images/images1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}  
+#mexican {
+    grid-area: mexican;
+    background-image: url("../assets/images/images7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}  
+#aperol {
+    grid-area: aperol;
+    background-image: url("../assets/images/images5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}  
+#pimm {
+    grid-area: pimm;
+    background-image: url("../assets/images/images3.jpg");
+}
+#pimm2 {
+    grid-area: pimm2;
+    background-image: url("../assets/images/images4.jpg");
+}
+#b-mary {
+    grid-area: b-mary;
+    background-image: url("../assets/images/images6.jpg");
+}  
+#pancakes {
+    grid-area: pancakes;
+    background-image: url("../assets/images/images9.jpg");
+}
+#curry {
+    grid-area: curry;
+    background-image: url("../assets/images/images10.jpg");
+}  
+#pasta2 {
+    grid-area: pasta2;
+    background-image: url("../assets/images/images2.jpg");
+}  
+.food {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 2%;
+}
