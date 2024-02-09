@@ -2,6 +2,7 @@
 // FoodRecipeList.jsx
 import { useState, useEffect } from "react";
 import "../assets/css/food.css";
+
 function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 	//apply style to word in recipe list that matches search term
 	const [formattedRecipes, setFormattedRecipes] = useState([]);
@@ -27,6 +28,10 @@ function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 			};
 		})
 	);
+	
+	// State to manage dropdown style	
+	const [dropdownStyle, setDropdownStyle] = useState({}); 
+
 	useEffect(() => {
 		if (searchTerm) {
 			const updateRecipes = recipes.map((recipe) => {
@@ -49,8 +54,9 @@ function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 			setFormattedRecipes(updateRecipes);
 		}
 	}, [searchTerm, recipes]);
+
 	return (
-		<div>
+		<div className="px-3">
 			{searchTerm && formattedRecipes.length > 0 && (
 				// Create Dropdown List
 				<div className="dropdown" data-bs-toggle="dropdown">
@@ -74,6 +80,7 @@ function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 		</div>
 	);
 }
+
 export default FoodRecipeList;
 // {
 /* <div className="recipe-list">

@@ -17,6 +17,19 @@
   background-color: #cbcbcb;
 }
 
+.dropdown {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* FoodRecipe.jsx*/
 /* Cards layout */
 .recipeIconText {
