@@ -1,5 +1,5 @@
 
-// import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
@@ -8,10 +8,6 @@ import Contact from './components/Pages/Contact';
 import Drinks from './components/Pages/Drinks';
 import Recipe from './components/Pages/Recipe';
 
-import { useState } from 'react'
-import './App.css'
-import Recipe from './components/Pages/Recipe'
-import Home from './components/Pages/Home'
 
 
 function App() {
@@ -31,10 +27,6 @@ function App() {
       </Router>
 
       <h1>flavour finder</h1>
-    <div>
-      < Home />
-
-
     </div>
   );
 }
