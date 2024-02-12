@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 // FoodRecipe.jsx
 import React from "react";
 import { Card } from "react-bootstrap";
@@ -6,7 +8,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import "../assets/css/food.css";
+import "./styles/food.css";
 
 //Forcing first letter to be uppercase
 function capitalizeFirstLetter(string) {

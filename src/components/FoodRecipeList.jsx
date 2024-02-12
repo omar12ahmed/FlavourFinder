@@ -1,45 +1,19 @@
 /* eslint-disable react/prop-types */
 // FoodRecipeList.jsx
 import { useState, useEffect } from "react";
-import "../assets/css/food.css";
+import "./styles/food.css";
 
-function FoodRecipeList({ recipes, onSelect, searchTerm }) {
+function FoodRecipeList({ recipes, onSelect, searchTerm, dropdownVisible }) {
 	//apply style to word in recipe list that matches search term
 	const [formattedRecipes, setFormattedRecipes] = useState([]);
-	console.log(recipes);
-	console.log(searchTerm);
-	console.log(
-		recipes.map((recipe) => {
-			console.log(recipe.label);
-			const index = recipe.label.toLowerCase().indexOf(searchTerm.toLowerCase());
-			console.log(index);
-			// return {
-			//   start: recipe.label.substring(0, index),
-			//   term: recipe.label.substring(index, index + searchTerm.length),
-			//   end: recipe.label.substring(index + searchTerm.length),
-			//   fullRecipe: recipe,
-			// };
-			return {
-				string: recipe.label,
-				startOfString: recipe.label.substring(0, index),
-				termString: recipe.label.substring(index, index + searchTerm.length),
-				endOfString: recipe.label.substring(index + searchTerm.length),
-				fullRecipe: recipe,
-			};
-		})
-	);
-	
-	// State to manage dropdown style	
-	const [dropdownStyle, setDropdownStyle] = useState({}); 
+	const [selectedRecipeIndex, setSelectedRecipeIndex] = useState(-1); // Initialize with -1 to denote no selection
 
 	useEffect(() => {
 		if (searchTerm) {
 			const updateRecipes = recipes.map((recipe) => {
-				// Given string
-				console.log(recipe.label);
 				// Find the index of the search term in the string
 				let index = recipe.label.toLowerCase().indexOf(searchTerm.toLowerCase());
-				console.log(index);
+
 				// Create the array/object of substrings
 				return {
 					startOfString:
@@ -55,20 +29,58 @@ function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 		}
 	}, [searchTerm, recipes]);
 
+	// Event listener to handle keyboard navigation
+	useEffect(() => {
+		const handleKeyDown = (event) => {
+			if (formattedRecipes.length === 0) return;
+
+			switch (event.key) {
+				case "ArrowUp":
+					setSelectedRecipeIndex((prevIndex) =>
+						prevIndex > 0 ? prevIndex - 1 : formattedRecipes.length - 1
+					);
+					break;
+				case "ArrowDown":
+					setSelectedRecipeIndex((prevIndex) =>
+						prevIndex < formattedRecipes.length - 1 ? prevIndex + 1 : 0
+					);
+					break;
+				case "Enter":
+					if (selectedRecipeIndex !== -1) {
+						const selectedRecipe = formattedRecipes[selectedRecipeIndex].fullRecipe;
+						onSelect(selectedRecipe);
+						setSelectedRecipeIndex(-1);
+					}
+					// Reset state variables to hide the dropdown
+					break;
+				default:
+					break;
+			}
+		};
+
+		document.addEventListener("keydown", handleKeyDown);
+
+		return () => {
+			document.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [formattedRecipes, onSelect, selectedRecipeIndex]);
+
 	return (
 		<div className="px-3">
-			{searchTerm && formattedRecipes.length > 0 && (
-				// Create Dropdown List
-				<div className="dropdown" data-bs-toggle="dropdown">
+			{/* Create Dropdown List if searchTerm is present */}
+			{searchTerm && dropdownVisible && (
+				<div className="dropdown recipe-dropdown px-5" data-bs-toggle="dropdown">
 					<ul className="recipe-list dropdown-menu show">
 						{formattedRecipes.map((recipe, index) => (
 							<li
 								key={index}
 								onClick={() => onSelect(recipe.fullRecipe)}
-								className="dropdown-item"
+								className={`dropdown-item ${
+									index === selectedRecipeIndex ? "active" : ""
+								}`}
 							>
 								<span>{recipe.startOfString}</span>
-								<span style={{ fontWeight: "bold", color: "#86C166" }}>
+								<span style={{ fontWeight: "bold", color: "#DB4D6D" }}>
 									{recipe.termString}
 								</span>
 								<span>{recipe.endOfString}</span>
@@ -82,20 +94,3 @@ function FoodRecipeList({ recipes, onSelect, searchTerm }) {
 }
 
 export default FoodRecipeList;
-// {
-/* <div className="recipe-list">
-            {recipes &&
-                recipes?.map((recipe, index) => {
-                    console.log(recipe.label); // Log the recipe
-                    return (
-                        <div key={index} onClick={() => onSelect(recipe)}>
-                            <li>
-                                <span className={recipe.label.includes(searchTerm) ? "bold-label" : ""}>
-                                    {recipe.label}
-                                </span>
-                            </li>
-                        </div>
-                    );
-                })}
-        </div> */
-// }

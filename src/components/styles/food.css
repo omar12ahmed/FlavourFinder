@@ -1,0 +1,65 @@
+/* food.css */
+
+/* FoodRecipList.jsx*/
+/* Search dropdown */
+.recipe-list {
+	list-style-type: none;
+}
+
+.recipe-list li {
+	border-bottom: 1px solid #dcdcdc;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.recipe-list li:hover,
+.recipe-list .active {
+	color: #fff;
+	background-color: #cdcdcd;
+}
+
+.dropdown {
+	position: absolute;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.dropdown-menu {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+}
+
+/* FoodRecipe.jsx*/
+/* Cards layout */
+.recipeIconText {
+	width: 15px;
+	margin-right: 8px;
+}
+
+.recipeIconText svg {
+	color: #86c166;
+}
+
+.custom-title {
+	background-color: #86c166;
+	padding: 0.5rem 1.5rem;
+}
+
+.custom-btn {
+	background-color: #86c166;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	text-decoration: none;
+}
+
+.custom-btn:hover {
+	background-color: #b1f08f;
+	color: #4d5139;
+}
