@@ -37,22 +37,36 @@
 
 /* FoodRecipe.jsx*/
 /* Cards layout */
-.recipeIconText {
-	width: 15px;
-	margin-right: 8px;
-}
-
-.recipeIconText svg {
-	color: #86c166;
-}
-
 .custom-title {
 	background-color: #86c166;
 	padding: 0.5rem 1.5rem;
+	height: 4.4em;
+	font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+	.custom-title {
+		height: auto; /* Remove height on small screens */
+	}
+}
+
+.recipeIcon {
+	width: 15px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.recipeIcon svg {
+	color: #86c166;
+}
+
+.list-ingredients-items {
+	border-bottom: 2px solid #ececec;
+	padding: 3px 0px;
 }
 
 .custom-btn {
-	background-color: #86c166;
+	background-color: #e87a90;
 	color: #fff;
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
@@ -60,6 +74,24 @@
 }
 
 .custom-btn:hover {
-	background-color: #b1f08f;
-	color: #4d5139;
+	background-color: #f8c3cd;
+	color: #8e354a;
+}
+
+.custom-btn-v2 {
+	color: #e87a90;
+	border: solid #e87a90;
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.custom-btn-v2:hover {
+	background-color: #e87a90;
+	color: #fff;
+}
+
+.recipeLinkIcon {
+	margin-right: 10px;
 }

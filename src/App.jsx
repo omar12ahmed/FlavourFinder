@@ -8,8 +8,6 @@ import Contact from './components/Pages/Contact';
 import Drinks from './components/Pages/Drinks';
 import Recipe from './components/Pages/Recipe';
 
-
-
 function App() {
   return (
 
