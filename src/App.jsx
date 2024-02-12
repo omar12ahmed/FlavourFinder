@@ -25,8 +25,7 @@ function App() {
         </div>
       </Router>
 
-      <h1>flavour finder</h1>
-      <ContactPage/>
+      
     
     </div>
   );

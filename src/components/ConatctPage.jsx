@@ -53,39 +53,43 @@ function ContactPage() {
 
 
     return (
-        <div className="contactPage">
+        <div className="contactPage" style={{textAlign:"center", maxWidth:"500px", margin:"auto"}}>
+
+            <h1 style={{marginBottom:"20px"}}>Contact us </h1>
 
             {error && <div style={{color:"red"}}>{error}</div>}
 
-        <form style={{display:"block"}}
+        <form style={{display:"block", textAlign:"center"}}
         onSubmit={handleSubmit}>
-            <label>
+            <label style={{ display: 'block', marginBottom: '10px' }}>
                 Name:
                 <br />
                 <input type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    />
+                    style={{ width: '100%', padding: '8px', boxSizing: 'border-box', marginBottom: '10px' }}                    />
             </label>
             <br />
-            <label>
+            <label style={{ display: 'block', marginBottom: '10px' }}>
                 Email:
                 <br/>
                 <input type="text"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    style={{ width: '100%', padding: '8px', boxSizing: 'border-box', marginBottom: '10px' }}
                     />
-            </label>
+            </label >
             <br />
-            <label>
+            <label style={{ display: 'block', marginBottom: '10px' }}>
                 Reason for contact:
-            </label>
+            </label >
             <br/>
             <select name="reasons"
                 value={formData.reasons}
                 onChange={handleChange}
+                style={{ width: '100%', padding: '8px', boxSizing: 'border-box', marginBottom: '10px' }}
                 >
                 <option>Select..</option>
                 {options.map(option => (
@@ -93,16 +97,21 @@ function ContactPage() {
                     ))}
 
             </select>
-            <label> Describe the problem with as much detail as possible
+            <label style={{ display: 'block', marginBottom: '10px' }}>
+                 Describe the problem with as much detail as possible
                 <textarea name="description" cols="40" rows="10"
                 value={formData.description}
                 onChange={handleChange}
+                style={{ width: '100%', padding: '8px', boxSizing: 'border-box', marginBottom: '10px' }}
                 ></textarea>
             </label>
-            <label> Attachments:</label>
+            <label style={{ display: 'block', marginBottom: '10px' }}> 
+                Attachments:
             <input type="file" name="attachments" 
             onChange={handleChange}
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box', marginBottom: '10px' }}
             />
+            </label>
             <br />
             <input type="submit"
             onChange={handleSubmit} />
