@@ -18,6 +18,11 @@
 	background-color: #cdcdcd;
 }
 
+.recipe-list-img {
+	width: 55px;
+	margin-right: 10px;
+}
+
 .dropdown {
 	position: absolute;
 	z-index: 10;

@@ -79,6 +79,11 @@ function FoodRecipeList({ recipes, onSelect, searchTerm, dropdownVisible }) {
 									index === selectedRecipeIndex ? "active" : ""
 								}`}
 							>
+								<img
+									src={recipe.fullRecipe.image}
+									alt={recipe.fullRecipe.label}
+									className="recipe-list-img"
+								/>
 								<span>{recipe.startOfString}</span>
 								<span style={{ fontWeight: "bold", color: "#DB4D6D" }}>
 									{recipe.termString}
