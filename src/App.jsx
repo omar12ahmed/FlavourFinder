@@ -14,6 +14,7 @@ import LoginButton from './components/LoginButton';
 import "../src/assets/css/food.css";
 
 
+
 import './App.css'
 
 
@@ -35,9 +36,11 @@ function App() {
               <Route path="/recipe" element={<Recipe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/drinks" element={<Drinks />} />
-              <Route path="/UserPage" element={<ProtectedRoute component={UserPage} />} />
-          </Routes>
-          <LoginButton />
+              {/* <Route path="/UserPage" element={<ProtectedRoute component={UserPage} />} /> */}
+              <Route path="/UserPage" element={<UserPage />} />
+           {/* <LoginButton />  */}
+           </Routes>
+        
         </div>
       </Router>
       <Footer />
