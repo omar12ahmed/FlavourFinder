@@ -114,7 +114,9 @@ function ContactPage() {
             </label>
             <br />
             <input type="submit"
-            onChange={handleSubmit} />
+            onChange={handleSubmit} 
+            style={{background:"rgb(3 246 230 / 38%)", fontSize:"20px", borderRadius:"10px", padding:"10px"}}
+            />
 
         </form>
 

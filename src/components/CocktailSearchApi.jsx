@@ -85,15 +85,15 @@ function CocktailSearchApi() {
                         <Grid item
                             key={cocktail.strDrink} xs={12} sm={6} md={4} sx={{ marginBottom: 10 }}>
                             <Card sx={{ maxWidth: 345 }}>
-                                <CardHeader
-                                    avatar={
-                                        <Avatar src="src/assets/images/FF-logos_black.png" alt=" company logo" sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
-                                        </Avatar>
-                                    }
+                            <CardHeader
+                                avatar={
+                                    <Avatar src="./assets/FF-logos_transparent.png" alt=" company logo"  sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
+                                    </Avatar>
+                                }
 
-                                    title={cocktail.strDrink}
-                                    subheader={cocktail.strCategory}
-                                />
+                                title={cocktail.strDrink}
+                                subheader={cocktail.strCategory}
+                            />
                                 <CardContent>
 
                                     <Typography variant="body2" color="text.secondary" >

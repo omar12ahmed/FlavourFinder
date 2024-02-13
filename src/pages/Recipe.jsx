@@ -1,12 +1,12 @@
 //Recipe.jsx
 import { useState, useEffect } from "react";
-import SearchBar from "../SearchBar";
-import FoodRecipeList from "../FoodRecipeList";
-import FoodRecipe from "../FoodRecipe";
-import RandomRecipes from "../RandomRecipes";
-import recipeData from "../../utilities/edamamRecipeData.json";
+import SearchBar from "../components/SearchBar";
+import FoodRecipeList from "../components/FoodRecipeList";
+import FoodRecipe from "../components/FoodRecipe";
+import RandomRecipes from "../components/RandomRecipes";
+import recipeData from "../utilities/edamamRecipeData.json";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/food.css";
+import "../components/styles/food.css";
 
 function Recipe() {
 	const [searchTerm, setSearchTerm] = useState("");

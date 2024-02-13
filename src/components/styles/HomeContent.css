@@ -44,53 +44,53 @@ h2, p {
 
 #pasta1 {
     grid-area: pasta1;
-    background-image: url("../assets/images/images1.jpg");
+    background-image: url("./assets/images1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #mexican {
     grid-area: mexican;
-    background-image: url("../assets/images/images7.jpg");
+    background-image: url("./assets/images7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #aperol {
     grid-area: aperol;
-    background-image: url("../assets/images/images5.jpg");
+    background-image: url("./assets/images5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #pimm {
     grid-area: pimm;
-    background-image: url("../assets/images/images3.jpg");
+    background-image: url("./assets/images3.jpg");
 }
 
 #pimm2 {
     grid-area: pimm2;
-    background-image: url("../assets/images/images4.jpg");
+    background-image: url("./assets/images4.jpg");
 }
 
 #b-mary {
     grid-area: b-mary;
-    background-image: url("../assets/images/images6.jpg");
+    background-image: url("./assets/images6.jpg");
 }
 
 #pancakes {
     grid-area: pancakes;
-    background-image: url("../assets/images/images9.jpg");
+    background-image: url("./assets/images9.jpg");
 }
 
 #curry {
     grid-area: curry;
-    background-image: url("../assets/images/images10.jpg");
+    background-image: url("./assets/images10.jpg");
 }
 
 #pasta2 {
     grid-area: pasta2;
-    background-image: url("../assets/images/images2.jpg");
+    background-image: url("./assets/images2.jpg");
 }
 
 .food {

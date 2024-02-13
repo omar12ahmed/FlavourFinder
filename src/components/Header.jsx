@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import './Header.css';
-import headerImage from '../assets/images/FF-logos_transparent.png';
+// import headerImage from './assets/FF-logos_transparent.png';
 // import * as BiIcons from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export const Header = () => {
         <>
             <header className="header">
                 <nav className="nav container">
-                    <Link to="/" className="nav__logo"><img src={headerImage} alt="Flavour Finder" width="100px" height="auto"/></Link>
+                    <Link to="/" className="nav__logo"><img src="./assets/FF-logos_transparent.png" alt="Flavour Finder" width="100px" height="auto"/></Link>
 
                     <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
                         <ul className="nav">
@@ -34,6 +34,13 @@ export const Header = () => {
                                 <Link to="/Drinks" className="nav__link">
                                     {/* <BiIcons.BiGlass className="nav__icon" />  */}
                                     Drinks
+                                </Link>
+                            </li>
+
+                            <li className="nav__">
+                                <Link to="/UserPage" className="nav__link">
+                                    {/* <BiIcons.BiGlass className="nav__icon" />  */}
+                                    User Page
                                 </Link>
                             </li>
 
