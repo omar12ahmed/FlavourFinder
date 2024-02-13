@@ -15,7 +15,8 @@ import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
 import { Grid } from "@mui/material";
 import SearchBar from "./SearchBar";
-import { Bolt } from "@mui/icons-material";
+import ShareButton from "./ShareButton";
+
 
 function CocktailSearchApi() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -25,10 +26,11 @@ function CocktailSearchApi() {
 
 
     useEffect(() => {
-
+        
         const handleSearch = async () => {
             try {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
+                console.log(searchTerm)
                 setCocktails(response.data.drinks || []);
             } catch (error) {
                 console.error("error", error)
@@ -55,11 +57,15 @@ function CocktailSearchApi() {
     const handleSearch = () => { }
     return (
         <>
-            <SearchBar
+        <div style={{marginTop:"60px"}}>
+
+            <SearchBar 
                 searchTerm={searchTerm}
                 onChange={handleChange}
                 onSearch={handleSearch}
-            />
+                placeholder={"fkdjvn"}
+                />
+                </div>
             {searchTerm === "" && <CocktailRandmonApi />}
             <div >
 
@@ -81,8 +87,7 @@ function CocktailSearchApi() {
                             <Card sx={{ maxWidth: 345 }}>
                                 <CardHeader
                                     avatar={
-                                        <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
-                                            <img src="src/assets/images/FF-logos_black.png" alt=" company logo" />
+                                        <Avatar src="src/assets/images/FF-logos_black.png" alt=" company logo" sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
                                         </Avatar>
                                     }
 
@@ -104,9 +109,9 @@ function CocktailSearchApi() {
                                     <IconButton aria-label="add to favorites">
                                         <FavoriteIcon />
                                     </IconButton>
-                                    <IconButton style={{ marginRight: "80px" }} aria-label="share">
-                                        <ShareIcon />
-                                    </IconButton>
+                                    <ShareButton
+                                shareUrl={cocktail.strDrink}
+                                />
                                     <button onClick={() => handleShowModal(cocktail)}> View instructions</button>
                                 </CardActions>
 
