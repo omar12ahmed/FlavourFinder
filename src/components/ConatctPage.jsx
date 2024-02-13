@@ -53,9 +53,9 @@ function ContactPage() {
 
 
     return (
-        <div className="contactPage" style={{textAlign:"center", maxWidth:"500px", margin:"auto"}}>
+        <div  className="contactPage" style={{textAlign:"center", maxWidth:"500px", margin:"auto"}}>
 
-            <h1 style={{marginBottom:"20px"}}>Contact us </h1>
+            <h1 id= "contact"style={{marginBottom:"20px"}}>Contact us </h1>
 
             {error && <div style={{color:"red"}}>{error}</div>}
 

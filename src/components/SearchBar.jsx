@@ -12,7 +12,7 @@ function SearchBar({ searchTerm, onChange, onSearch }) {
 	};
 
 	return (
-		<div className="p-3 border-bottom" style={{ width: "100%" }}>
+		<div className="p-3 border-bottom mt-10" style={{ width: "100%" }}>
 			<div style={{ position: "relative", width: "100%" }}>
         {/* input bar */}
 				<input

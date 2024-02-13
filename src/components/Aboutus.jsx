@@ -38,7 +38,7 @@ function Aboutus(){
         </div>
 
             <div>
-                <h1>history</h1>
+                <h1 id="history">history</h1>
                 <p>
                     Embark on a flavorful journey through the pages of our history. Established with a vision to
                     inspire and simplify the art of cooking, our recipe app has evolved into a culinary companion

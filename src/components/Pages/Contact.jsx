@@ -1,6 +1,7 @@
 import ContactPage from "../ConatctPage"
 import Aboutus from "../Aboutus"
 import ArtilceApi from "../ArticleApi"
+import TableOfContent from "../TableOfContent"
 
 function Contact(){
 
@@ -9,6 +10,7 @@ function Contact(){
             <Aboutus/>
            <ArtilceApi/>
            <ContactPage/>
+           <TableOfContent/>
         </div>
     )
 }

@@ -28,7 +28,7 @@ function ArtilceApi(){
 
     return (
         <div style={{border:"1px solid #ccc", borderRadius:"5px", padding:"20px", marginBottom:"20px", maxWidth:"600px"}}>
-            <h1>food and health</h1>
+            <h1 id="food">food and health</h1>
             <ul>
                 {articles && articles.map((article,index)=>(
                     <li key={index} style={{marginBottom:"20px"}}>
