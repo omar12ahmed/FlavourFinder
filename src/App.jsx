@@ -20,12 +20,20 @@ function App() {
       <Router>
         <div>
           <Header />
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipe" element={<Recipe />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/drinks" element={<Drinks />} />
+          </Routes> */}
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/recipe" element={<Recipe />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/drinks" element={<Drinks />} />
+              <Route path="/UserPage" element={<ProtectedRoute component={Profile} />} />
           </Routes>
+          <LoginButton />
         </div>
       </Router>
       <Footer />
