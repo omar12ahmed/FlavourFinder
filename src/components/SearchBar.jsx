@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 // eslint-disable-next-line react/prop-types
-function SearchBar({ searchTerm, onChange, onSearch }) {
+function SearchBar({ searchTerm, onChange, onSearch, placeholder}) {
 	const inputRef = useRef(null);
 
 	useEffect(() => {
