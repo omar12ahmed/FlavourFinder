@@ -14,6 +14,8 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
 import { Grid } from "@mui/material";
+import ShareButton from "./ShareButton";
+
 
 const ExpandMore = styled(({ expand, ...other }) => (
     <IconButton {...other} />
@@ -70,8 +72,7 @@ function CocktailRandmonApi() {
                         <Card sx={{ maxWidth: 345 }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
-                                        <img src="src/assets/images/FF-logos_black.png" alt=" company logo" />
+                                    <Avatar src="src/assets/images/FF-logos_black.png" alt="company logo" sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
                                     </Avatar>
                                 }
 
@@ -93,9 +94,9 @@ function CocktailRandmonApi() {
                                 <IconButton aria-label="add to favorites">
                                     <FavoriteIcon />
                                 </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon />
-                                </IconButton>
+                                <ShareButton
+                                shareUrl={cocktail.strDrink}
+                                />
                                 <button onClick={() => handleShowModal(cocktail)}> View instructions</button>
                             </CardActions>
 
