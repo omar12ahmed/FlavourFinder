@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
 import FoodRecipeList from "../FoodRecipeList";
 import FoodRecipe from "../FoodRecipe";
+import RandomRecipes from "../RandomRecipes";
 import recipeData from "../../utilities/edamamRecipeData.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/food.css";
@@ -13,6 +14,7 @@ function Recipe() {
 	const [selectedRecipe, setSelectedRecipe] = useState(null);
 	const [suggestedRecipes, setSuggestedRecipes] = useState([]);
 	const [dropdownVisible, setDropdownVisible] = useState(false);
+	const [randomRecipes, setRandomRecipes] = useState([]);
 
 	useEffect(() => {
 		if (!searchTerm) return;
@@ -24,12 +26,37 @@ function Recipe() {
 		)
 			.then((response) => response.json())
 			.then((data) => {
+				console.log("Fetched data:", data);
 				setRecipes(data.hits.map((hit) => hit.recipe)); // Extract the recipe data from the hits array
 			})
 			.catch((error) => {
 				console.error("Error fetching recipes:", error);
 			});
 	}, [searchTerm]);
+
+	useEffect(() => {
+		if (
+			recipes.length === 0 &&
+			selectedRecipe === null &&
+			suggestedRecipes.length === 0
+		) {
+			fetchRandomRecipes();
+		}
+	}, [recipes, selectedRecipe, suggestedRecipes]);
+
+	const fetchRandomRecipes = () => {
+		// Fetch random recipes from the Edamam API
+		fetch(
+			`https://api.edamam.com/api/recipes/v2?type=public&q=random&app_id=13240bb6&app_key=eed90ce549fd7ffed60d201349af2108`
+		)
+			.then((response) => response.json())
+			.then((data) => {
+				setRandomRecipes(data.hits.map((hit) => hit.recipe)); // Extract the recipe data from the hits array
+			})
+			.catch((error) => {
+				console.error("Error fetching random recipes:", error);
+			});
+	};
 
 	const handleSearchBarInput = (e) => {
 		setSearchTerm(e.target.value);
@@ -83,6 +110,12 @@ function Recipe() {
 					searchTerm={searchTerm}
 					dropdownVisible={dropdownVisible}
 				/>
+
+				{/* Display random recipe for first load the this page */}
+				{recipes.length === 0 &&
+					selectedRecipe === null &&
+					suggestedRecipes.length === 0 && <RandomRecipes recipes={randomRecipes} />}
+
 				<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 g-3">
 					{/* Display the selected recipe */}
 					<div className="col">
