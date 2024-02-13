@@ -1,4 +1,4 @@
-import HomeContent from "../HomeContent"
+import HomeContent from "../components/HomeContent"
 
 function Home(){
 
