@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // FoodRecipeList.jsx
 import { useState, useEffect } from "react";
-import "./styles/food.css";
+import "../components/styles/food.css";
 
 function FoodRecipeList({ recipes, onSelect, searchTerm, dropdownVisible }) {
 	//apply style to word in recipe list that matches search term
