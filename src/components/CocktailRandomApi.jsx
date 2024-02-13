@@ -71,7 +71,7 @@ function CocktailRandmonApi() {
                         <Card sx={{ maxWidth: 345 }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar src="src/assets/images/FF-logos_black.png" alt=" company logo"  sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
+                                    <Avatar src="./assets/FF-logos_transparent.png" alt=" company logo"  sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
                                     </Avatar>
                                 }
 
