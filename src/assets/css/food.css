@@ -1,0 +1,51 @@
+/* food.css */
+.recipe-list {
+  list-style-type: none;
+}
+
+.recipe-list li {
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+
+.recipe-list li:hover {
+  color: #fff;
+  background-color: #cbcbcb;
+}
+
+.bold-label {
+  font-weight: bold;
+}
+  
+/* .contactPage{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../src/assets/images/contact-page.jpg");
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+#about{
+  width: 220px;
+  min-width:220px;
+  padding:16px;
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;
+  max-height: calc(100vh -70px);
+  overflow: auto;
+  margin-top: 150px;
+
+}
+
+.mt-10{
+  margin-top: 100px;
+}
+
