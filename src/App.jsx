@@ -7,8 +7,11 @@ import Contact from './components/Pages/Contact';
 import Drinks from './components/Pages/Drinks';
 import Recipe from './components/Pages/Recipe';
 import Footer from './components/Footer';
-import ContactPage from './components/ConatctPage';
 import "../src/assets/css/food.css";
+
+
+import './App.css'
+
 
 function App() {
   return (
@@ -26,8 +29,6 @@ function App() {
         </div>
       </Router>
       <Footer />
-
-
     </div>
   );
 }

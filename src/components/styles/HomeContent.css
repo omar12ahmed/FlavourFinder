@@ -2,7 +2,7 @@
     background-image: url('../assets/images/images8.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-
+    border-radius: 15px;
 }
 
 .jumbo-box {
@@ -20,6 +20,14 @@
 
 .buttons {
     /* color: ;  color TBD*/
+/* .buttons {
+    color: ;  color TBD
+} */
+}
+
+h2, p {
+    display: flex;
+    justify-content: center;
 }
 
 .category-grid {
@@ -28,10 +36,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 300px 300px 300px 300px;
     grid-template-areas:
-        "aperol mexican mexican"
-        "pasta1 pimm pancakes"
-        "b-mary pimm pancakes"
-        "curry pimm2 pasta2";
+    "aperol pimm pancakes"
+    "pasta1 mexican mexican"
+    "b-mary mexican mexican"
+    "curry pimm2 pasta2" ;
 }
 
 #pasta1 {
