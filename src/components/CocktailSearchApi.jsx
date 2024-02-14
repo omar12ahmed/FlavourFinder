@@ -22,16 +22,16 @@ import { useNavigate, useLocation } from "react-router-dom";
 function CocktailSearchApi() {
     const [searchTerm, setSearchTerm] = useState('');
     const [cocktails, setCocktails] = useState([])
-    const [selectedCocktails, setSelectedCocktails] = useState(null)
+    const [selectedCocktails, setSelectedCocktails] = useState(null);
+    const [likedCocktails, setLikedCocktails] = useState(() => {
+        const savedLikedCocktails = localStorage.getItem("likedCocktails");
+        return savedLikedCocktails ? JSON.parse(savedLikedCocktails) : [];
+    });
 
     const navigate = useNavigate();
-    
     const location = useLocation();
 
-
-
     useEffect(() => {
-        
         const handleSearch = async () => {
             try {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
@@ -49,97 +49,85 @@ function CocktailSearchApi() {
         };
 
         if (searchTerm) {
-            handleSearch()
-            updateUrl()
+            handleSearch();
+            updateUrl();
         } else {
-            setCocktails([])
+            setCocktails([]);
             navigate("/Drinks");
-
         }
     }, [searchTerm]);
 
     const handleShowModal = (cocktail) => {
         setSelectedCocktails(cocktail);
     };
+
     const handleCloseModal = () => {
-        setSelectedCocktails(null)
-    }
+        setSelectedCocktails(null);
+    };
+
+    const handleLikeToggle = (cocktail) => {
+        const index = likedCocktails.findIndex((likedCocktail) => likedCocktail.idDrink === cocktail.idDrink);
+        if (index === -1) {
+            setLikedCocktails([...likedCocktails, cocktail]);
+        } else {
+            const updatedLikedCocktails = [...likedCocktails];
+            updatedLikedCocktails.splice(index, 1);
+            setLikedCocktails(updatedLikedCocktails);
+        }
+    };
+
+    useEffect(() => {
+        localStorage.setItem("likedCocktails", JSON.stringify(likedCocktails));
+    }, [likedCocktails]);
+
     const handleChange = (event) => {
         setSearchTerm(event.target.value)
     }
-    const handleSearch = () => { }
+
     return (
         <>
-        <div style={{marginTop:"60px"}}>
-
-            <SearchBar 
-                searchTerm={searchTerm}
-                onChange={handleChange}
-                onSearch={handleSearch}
-                placeholder={"fkdjvn"}
+            <div style={{ marginTop: "60px" }}>
+                <SearchBar
+                    searchTerm={searchTerm}
+                    onChange={handleChange}
+                    placeholder={"Search cocktails..."}
                 />
-                </div>
+            </div>
             {searchTerm === "" && <CocktailRandmonApi />}
-            <div >
-
+            <div>
                 {searchTerm !== "" && <h1 style={{ margin: "60px 0 60px 20px" }}>Revive and Hydrate</h1>}
-
-
-
-
-
-                <Grid container spacing={2}
-                    justifyContent="center"
-                    alignItems="center"
-                    style={{ margin: "30px 0px 0 30px" }}
-                >
+                <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ margin: "30px 0px 0 30px" }}>
                     {cocktails.map(cocktail => (
-
-                        <Grid item
-                            key={cocktail.strDrink} xs={12} sm={6} md={4} sx={{ marginBottom: 10 }}>
+                        <Grid item key={cocktail.idDrink} xs={12} sm={6} md={4} sx={{ marginBottom: 10 }}>
                             <Card sx={{ maxWidth: 345 }}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar src="./assets/FF-logos_transparent.png" alt=" company logo"  sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
-                                    </Avatar>
-                                }
-
-                                title={cocktail.strDrink}
-                                subheader={cocktail.strCategory}
-                            />
+                                <CardHeader
+                                    avatar={<Avatar src={cocktail.strDrinkThumb} alt={cocktail.strDrink} sx={{ bgcolor: red[500] }} aria-label="recipe" />}
+                                    title={cocktail.strDrink}
+                                    subheader={cocktail.strCategory}
+                                />
                                 <CardContent>
-
-                                    <Typography variant="body2" color="text.secondary" >
+                                    <Typography variant="body2" color="text.secondary">
                                         {cocktail.strDrink}
                                     </Typography>
                                     <CardMedia>
-                                        <img src={cocktail.strDrinkThumb}
-                                            alt={cocktail.strDrink}
-                                            style={{ maxWidth: "" }} />
+                                        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} style={{ maxWidth: "" }} />
                                     </CardMedia>
                                 </CardContent>
                                 <CardActions disableSpacing>
-                                    <IconButton aria-label="add to favorites">
-                                        <FavoriteIcon />
+                                    <IconButton aria-label="add to favorites" onClick={() => handleLikeToggle(cocktail)}>
+                                        <FavoriteIcon color={likedCocktails.some((likedCocktail) => likedCocktail.idDrink === cocktail.idDrink) ? "secondary" : "inherit"} />
                                     </IconButton>
-                                    <ShareButton
-                                shareUrl={cocktail.strDrink}
-                                />
+                                    <ShareButton shareUrl={cocktail.strDrink} />
                                     <button onClick={() => handleShowModal(cocktail)}> View instructions</button>
                                 </CardActions>
-
-                            </Card >
-
-
-
+                            </Card>
                         </Grid>
                     ))}
                 </Grid>
                 {selectedCocktails && (<CocktailModal cocktail={selectedCocktails} handleCloseModal={handleCloseModal} />)}
             </div>
-
         </>
-    )
-
+    );
 }
-export default CocktailSearchApi
+
+export default CocktailSearchApi;
