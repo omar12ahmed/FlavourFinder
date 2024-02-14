@@ -38,9 +38,9 @@ export const Header = () => {
                             </li>
 
                             <li className="nav__">
-                                <Link to="/UserPage" className="nav__link">
+                                <Link to="/Favourites" className="nav__link">
                                     {/* <BiIcons.BiGlass className="nav__icon" />  */}
-                                    User Page
+                                    Favourites
                                 </Link>
                             </li>
 
