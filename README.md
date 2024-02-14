@@ -195,9 +195,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+<p>Celia Chan - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com</p>
+<p>Klaudia Kierepka - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com</p>
+<p>Omar Ahmed - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com</p>
+<p>Yusuf Usman - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com</p>
 
-Project Link: [https://github.com/omar12ahmed/FlavourFinder](https://github.com/omar12ahmed/FlavourFinder)
+<p>Project Repo Link: [https://github.com/omar12ahmed/FlavourFinder](https://github.com/omar12ahmed/FlavourFinder)</p>
+<p>Project Deployment Link: [https://github.com/omar12ahmed/FlavourFinder](https://github.com/omar12ahmed/FlavourFinder)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
