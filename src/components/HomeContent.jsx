@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as bootstrap from 'bootstrap';
 import './styles/HomeContent.css'
+import '../pages/Drinks'
 function
     HomeContent() {
 
@@ -20,10 +21,9 @@ function
                     our recipes have got you covered. Browse through our culinary creations and embark on a delicious
                     journey in your own kitchen. From easy-to-follow instructions to mouthwatering photos,
                     discover the joy of cooking with our enticing recipe selection. What's on your plate today?</p>
-                {/* button - conected to API */}
                 <div className='API-buttons'>
-                    <button className="btn btn-primary btn-lg button" type="button">Find your next dinner!</button>
-                    <button className="btn btn-primary btn-lg button" type="button">Find your next drink!</button>
+                <a href='/Recipe' className="btn btn-primary deploy">Recipe</a>
+                <a href='/Drinks' className="btn btn-primary deploy">Drinks</a>
                 </div>
             </div>
             <section className='category-grid'>
