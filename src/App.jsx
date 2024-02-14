@@ -7,7 +7,7 @@ import Contact from './pages/Contact';
 import Drinks from './pages/Drinks';
 import Recipe from './pages/Recipe';
 import Footer from './components/Footer';
-import UserPage from './pages/UserPage';
+import Favourites from './pages/Favourites';
 import "../src/assets/css/food.css";
 
 
@@ -26,7 +26,7 @@ function App() {
               <Route path="/recipe" element={<Recipe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/drinks" element={<Drinks />} />
-              <Route path="/UserPage" element={<UserPage />} />
+              <Route path="/favourites" element={<Favourites />} />
           </Routes>
         </div>
       </Router>
