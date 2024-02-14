@@ -1,0 +1,94 @@
+/* contact.css */
+
+/* Aboutus.jsx */
+/* fix global confilx, !IMPORTANT! Don't change*/
+
+h1,
+h3 {
+	text-align: center;
+}
+
+ul {
+	padding-left: 0;
+}
+
+/* fix global conflix, element position is slightly off to the left in small screen */
+.section {
+	padding: 2rem 0;
+}
+
+/* General */
+hr {
+	margin: 6% 25%;
+	border-bottom: 3px solid;
+	color: #b4b9d3;
+}
+
+/* Above all, we are */
+.contactIcon {
+	margin-right: 6px;
+	color: #a5dee4;
+}
+
+.weAre b {
+	color: #1e88a8;
+}
+
+/* ArticleApi.jsx */
+.article {
+	border: 1.5px solid #ccc;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 6px 6px 0px;
+}
+
+.article li {
+	margin-bottom: 20px;
+}
+
+.article a {
+	color: #d56638;
+	font-weight: 700;
+}
+
+.article a:hover {
+	text-decoration: none;
+}
+
+.articleIcon {
+	margin-right: 6px;
+	color: #fb9966;
+}
+
+/* ContactPage.jsx */
+.contactRow {
+	padding: 30px 0;
+	background-color: #fbf8f3;
+	width: 100%;
+}
+
+.contactPage {
+	text-align: center;
+	margin: auto;
+	max-width: 500px;
+}
+
+/* tableOfContent.jsx */
+.tableNav {
+	position: sticky;
+	top: 150px;
+	left: 50px;
+	width: max-content;
+	background-color: #ededed;
+	border-radius: 8px;
+	padding: 20px 30px;
+	z-index: 100;
+}
+
+.tableNav ul {
+	margin-top: 15px;
+}
+
+.tableNav a {
+	color: #1e88a8;
+}
