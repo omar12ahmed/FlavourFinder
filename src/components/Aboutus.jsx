@@ -45,7 +45,7 @@ function Aboutus() {
                     for enthusiasts worldwide. From our humble beginnings, we've been dedicated to bringing joy to
                     kitchens everywhere, fostering a community that celebrates the love of good food. Join us in relishing
                     the moments that have shaped our history, as we continue to share the passion for delicious, home-cooked meals.
-                </p>
+                </p>.
             </div>
 
         </div>
