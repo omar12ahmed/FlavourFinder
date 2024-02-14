@@ -8,13 +8,11 @@ function Favourites() {
 
     useEffect(() => {
         // Retrieve saved recipes from local storage
-        const savedRecipesData = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-        console.log("Saved recipes from local storage:", savedRecipesData); // Add logging statement
+        const savedRecipesData = JSON.parse(localStorage.getItem("likedRecipes")) || [];
         setSavedRecipes(savedRecipesData);
 
         // Retrieve saved cocktails from local storage
-        const savedCocktailsData = JSON.parse(localStorage.getItem("savedCocktails")) || [];
-        console.log("Saved cocktails from local storage:", savedCocktailsData); // Add logging statement
+        const savedCocktailsData = JSON.parse(localStorage.getItem("likedCocktails")) || [];
         setSavedCocktails(savedCocktailsData);
     }, []);
 
