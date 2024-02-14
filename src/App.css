@@ -276,7 +276,7 @@ img {
   color: #888;
 }
 .baner {
-  background-image: url('../assets/images/images5.jpg');
+  background-image: url('./assets/images5.jpg');
   
 }
 
