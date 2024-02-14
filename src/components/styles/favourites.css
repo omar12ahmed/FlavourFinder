@@ -1,0 +1,46 @@
+/* favourites.css */
+/* Update the CSS to handle smaller screens */
+.saved-recipes {
+  font-size: small;
+}
+
+.saved-recipes .custom-title{
+  height: 5rem;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.saved-recipes .icon-text {
+  flex-wrap: wrap; 
+}
+
+/* Drink */
+.saved-cocktails .card{
+  padding: 0;
+}
+
+.saved-cocktails .card-body{
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  
+}
+
+.saved-cocktails .card-title{
+  position: relative;
+  background-color: #f44336;
+}
+
+.saved-cocktails .btn{
+  position: relative;
+  margin-top: 16px;
+  margin-left: 16px;
+  background-color: #3A8FB7;
+  border: 0;
+}
+
+.saved-cocktails .btn svg{
+
+ margin-right: 8px;
+
+}

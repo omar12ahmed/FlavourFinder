@@ -64,7 +64,7 @@ function FoodRecipe({ recipe }) {
     };
 
     return (
-        <div className="row px-3 h-100">
+        <div>
             <Card className="mb-3 p-0">
                 <Card.Img variant="top" src={recipe.image} alt={recipe.label} />
                 <Card.Body className="pt-0 px-0">
