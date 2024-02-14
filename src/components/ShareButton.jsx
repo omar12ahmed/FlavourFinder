@@ -21,7 +21,7 @@ function ShareButton({shareUrl}){
         console.log(shareUrl)
         switch (platform) {
             case 'facebook': 
-                Url = `https://www.facebook.com/dialog/share?app_id=redirect_uri&display=popup&href=${encodeURIComponent(shareUrl)}`;
+                Url = `https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbright-tiramisu-6234e1.netlify.app%2FDrinks&amp;src=sdkpreparse`;
                 break;
             case 'twitter':
                 Url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent('')}`;
