@@ -1,60 +1,48 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import * as bootstrap from 'bootstrap';
-
+import React, { useEffect, useState } from "react";
+import FoodRecipe from "../components/FoodRecipe";
+import { Card, Button } from "react-bootstrap";
 
 function Favourites() {
+    const [savedRecipes, setSavedRecipes] = useState([]);
+    const [savedCocktails, setSavedCocktails] = useState([]);
+
+    useEffect(() => {
+        // Retrieve saved recipes from local storage
+        const savedRecipesData = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+        console.log("Saved recipes from local storage:", savedRecipesData); // Add logging statement
+        setSavedRecipes(savedRecipesData);
+
+        // Retrieve saved cocktails from local storage
+        const savedCocktailsData = JSON.parse(localStorage.getItem("savedCocktails")) || [];
+        console.log("Saved cocktails from local storage:", savedCocktailsData); // Add logging statement
+        setSavedCocktails(savedCocktailsData);
+    }, []);
+
     return (
-        <>
-            <section className='form'>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                    <div id="emailHelp" className="form-text">We will never share your email with anyone else.</div>
+        <div>
+            <h1>Saved Items</h1>
+            <div className="saved-items-container">
+                <h2>Recipes</h2>
+                <div className="saved-recipes">
+                    {savedRecipes.map((recipe, index) => (
+                        <FoodRecipe key={index} recipe={recipe} />
+                    ))}
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                <h2>Cocktails</h2>
+                <div className="saved-cocktails">
+                    {savedCocktails.map((cocktail, index) => (
+                        <Card key={index} style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={cocktail.strDrinkThumb} />
+                            <Card.Body>
+                                <Card.Title>{cocktail.strDrink}</Card.Title>
+                                <Button variant="primary">View Details</Button>
+                            </Card.Body>
+                        </Card>
+                    ))}
                 </div>
-                <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </section>
-            <section className='caroussel'>
-                <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="../assets/images/images1" className="d-block w-100" alt="pasta"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="../assets/images/images5" className="d-block w-100" alt="Aperol"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="../assets/images/images7" className="d-block w-100" alt="Mexican food"/>
-                        </div>
-                        <div className="carousel-item active">
-                            <img src="../assets/images/images3" className="d-block w-100" alt="Pimm's Cup"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="../assets/images/images9" className="d-block w-100" alt="pancakes"/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="../assets/images/images6" className="d-block w-100" alt="Bloody Mary"/>
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </section>
-        </>
-    )
+            </div>
+        </div>
+    );
 }
 
 export default Favourites;
