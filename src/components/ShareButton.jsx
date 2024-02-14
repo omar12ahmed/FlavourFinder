@@ -5,7 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState } from 'react';
 
-function ShareButton({shareUrl, title}){
+function ShareButton({shareUrl}){
     const [anchorEl, setAnchorEl]=useState(null)
 
     const handleClick = (event)=>{
@@ -15,22 +15,24 @@ function ShareButton({shareUrl, title}){
         setAnchorEl(null)
     }
 
+    console.log(shareUrl)
     const handleShare = (platform) => {
-        let shareUrl;
+        let Url;
+        console.log(shareUrl)
         switch (platform) {
-            case 'facebook':
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            case 'facebook': 
+                Url = `https://www.facebook.com/dialog/share?app_id=redirect_uri&display=popup&href=${encodeURIComponent(shareUrl)}`;
                 break;
             case 'twitter':
-                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(title)}`;
+                Url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent('')}`;
                 break;
             case 'whatsapp':
-                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ': ' + shareUrl)}`;
+                Url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareUrl)}`;
                 break;
             default:
                 return;
         }
-        window.open(shareUrl, '_blank');
+        window.open(Url, '_blank');
     };
 
 

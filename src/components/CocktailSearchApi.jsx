@@ -16,12 +16,17 @@ import { red } from '@mui/material/colors';
 import { Grid } from "@mui/material";
 import SearchBar from "./SearchBar";
 import ShareButton from "./ShareButton";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 function CocktailSearchApi() {
     const [searchTerm, setSearchTerm] = useState('');
     const [cocktails, setCocktails] = useState([])
     const [selectedCocktails, setSelectedCocktails] = useState(null)
+
+    const navigate = useNavigate();
+    
+    const location = useLocation();
 
 
 
@@ -37,10 +42,18 @@ function CocktailSearchApi() {
             }
         };
 
+        const updateUrl = () => {
+            const searchParams = new URLSearchParams(location.search);
+            searchParams.set("search", searchTerm);
+            navigate(`/Drinks?${searchParams.toString()}`);
+        };
+
         if (searchTerm) {
             handleSearch()
+            updateUrl()
         } else {
             setCocktails([])
+            navigate("/Drinks");
 
         }
     }, [searchTerm]);
