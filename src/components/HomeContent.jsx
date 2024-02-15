@@ -8,7 +8,7 @@ function
     return (
         <section>
             {/* jumbotron */}
-            <div className="p-5 mb-4 bg-body-tertiary rounded-3 baner">
+            <div className="p-5 mb-4 bg-body-tertiary rounded-3 baner mt-5">
                 <div className="container-fluid py-5 jumboCopy jumbo-box">
                     <h1 className="display-5 fw-bold">Flavour Finder</h1>
                 </div>

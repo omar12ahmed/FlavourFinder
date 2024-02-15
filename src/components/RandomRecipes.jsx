@@ -28,7 +28,7 @@ function RandomRecipes({ recipes }) {
 
 	return (
 		<div className="random-recipes-container mt-3 px-3">
-			<div className="row">
+			<div className="row mt-5">
 				<div className="col-lg-7 mb-4">
 					{randomRecipes[0] && (
 						<motion.div
@@ -78,7 +78,7 @@ function RandomRecipes({ recipes }) {
 										rel="noopener noreferrer"
 										className="recipe-link"
 									>
-										<Card.Img variant="top" src={recipe.image} alt={recipe.label} />
+										<Card.Img variant="top" src={recipe.image} alt={recipe.label} style={index===1?{height:"273px",objectFit:"cover"}:{}} />
 										<div className="overlay"></div>
 									</a>
 									<Card.Body className="p-0">

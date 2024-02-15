@@ -23,9 +23,9 @@ function Favourites() {
 
 	return (
 		<div className="saved-items-container container col-lg-10">
-			<h1>Saved Items</h1>
+			<h1 style={{marginTop:"40px"}}>Saved Items</h1>
 			<div>
-				<h2>Recipes</h2>
+				<h2>Recipe</h2>
 				<div className="saved-recipes">
 					<div className="row">
 						{savedRecipes.map((recipe, index) => (

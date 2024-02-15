@@ -12,7 +12,7 @@ export const Header = () => {
         <>
             <header className="header">
                 <nav className="nav container">
-                    <Link to="/" className="nav__logo"><img src="./assets/FF-logos_transparent.png" alt="Flavour Finder" width="100px" height="auto"/></Link>
+                    <Link to="/" className="nav__logo"><img src="./assets/FF-logos_transparent.png" alt="company logo" width="80px" /></Link>
 
                     <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
                         <ul className="nav">

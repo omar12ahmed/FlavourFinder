@@ -73,22 +73,3 @@ hr {
 	max-width: 500px;
 }
 
-/* tableOfContent.jsx */
-.tableNav {
-	position: sticky;
-	top: 150px;
-	left: 50px;
-	width: max-content;
-	background-color: #ededed;
-	border-radius: 8px;
-	padding: 20px 30px;
-	z-index: 100;
-}
-
-.tableNav ul {
-	margin-top: 15px;
-}
-
-.tableNav a {
-	color: #1e88a8;
-}

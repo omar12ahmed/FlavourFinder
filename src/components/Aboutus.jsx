@@ -5,17 +5,7 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Aboutus() {
 	return (
-		<div
-		// style={{
-		// 	display: "flex",
-		// 	backgroundColor: "",
-		// 	alignItems: "flex-end",
-		// 	flexDirection: "column",
-		// 	alignContent: "flex-end",
-		// 	marginTop: "60px",
-		// }}
-		>
-			{/* <div style={{ maxWidth: "700px" }}> */}
+		<div>
 			<div className="mb-5">
 				<h1 id="aboutUs">About us</h1>
 				<p>
@@ -27,9 +17,8 @@ function Aboutus() {
 					cooking should be a joy, not a chore.
 				</p>
 
-				<hr/>
 
-				<h3>Above all, We are:</h3>
+				<h3 style={{marginTop:"60px"}} >Above all, We are:</h3>
 				<ul className="weAre">
 					<li>
 						<FontAwesomeIcon icon={faCheckCircle} className="contactIcon" />
@@ -65,6 +54,7 @@ function Aboutus() {
 				</ul>
 			</div>
 
+				<hr/>
 			<div className="mb-5">
 				<h1 id="history">History</h1>
 				<p>
