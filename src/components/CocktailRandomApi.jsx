@@ -13,18 +13,19 @@ import Card from "@mui/material/Card";
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
-import { Grid } from "@mui/material";
+import { Grid, duration } from "@mui/material";
 import ShareButton from "./ShareButton";
+import { motion } from "framer-motion";
 
-const ExpandMore = styled(({ expand, ...other }) => (
-    <IconButton {...other} />
-))(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));
+// const ExpandMore = styled(({ expand, ...other }) => (
+//     <IconButton {...other} />
+// ))(({ theme, expand }) => ({
+//     transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+//     marginLeft: 'auto',
+//     transition: theme.transitions.create('transform', {
+//         duration: theme.transitions.duration.shortest,
+//     }),
+// }));
 
 function CocktailRandmonApi() {
     const [cocktails, setCocktails] = useState([]);
@@ -64,45 +65,50 @@ function CocktailRandmonApi() {
                 alignItems="center"
                 style={{ margin: "30px 0px 0 30px" }}
             >
-                {cocktails.map(cocktail => (
-
+                {cocktails.map((cocktail, i) => (
                     <Grid item
                         key={cocktail.strDrink} xs={12} sm={6} md={4} sx={{ marginBottom: 10 }}>
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar src="./assets/FF-logos_transparent.png" alt=" company logo"  sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
-                                    </Avatar>
-                                }
+                        <motion.div
+                            initial={{ opacity: 0, translateX: -50 }}
+                            animate={{ opacity: 1, translateX: 0 }}
+                            transition={{ duration: 1.5, delay: i * 0.5 }}
+                        >
+                            <Card sx={{ maxWidth: 345 }}>
+                                <CardHeader
+                                    avatar={
+                                        <Avatar src="./assets/FF-logos_transparent.png" alt=" company logo" sx={{ bgcolor: red[500] }} aria-label="recipe" style={{}}>
+                                        </Avatar>
+                                    }
 
-                                title={cocktail.strDrink}
-                                subheader={cocktail.strCategory}
-                            />
-                            <CardContent>
-
-                                <Typography variant="body2" color="text.secondary">
-                                    {cocktail.strDrink}
-                                </Typography>
-                                <CardMedia>
-                                    <img src={cocktail.strDrinkThumb}
-                                        alt={cocktail.strDrink}
-                                        style={{ maxWidth: "" }} />
-                                </CardMedia>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon />
-                                </IconButton>
-                                <ShareButton
-                                shareUrl={cocktail.strDrink}
+                                    title={cocktail.strDrink}
+                                    subheader={cocktail.strCategory}
                                 />
-                                <button onClick={() => handleShowModal(cocktail)}> View instructions</button>
-                            </CardActions>
+                                <CardContent>
 
-                        </Card >
+                                    <Typography variant="body2" color="text.secondary">
+                                        {cocktail.strDrink}
+                                    </Typography>
+                                    <CardMedia>
+                                        <img src={cocktail.strDrinkThumb}
+                                            alt={cocktail.strDrink}
+                                            style={{ maxWidth: "" }} />
+                                    </CardMedia>
+                                </CardContent>
+                                <CardActions disableSpacing>
+                                    <IconButton aria-label="add to favorites">
+                                        <FavoriteIcon />
+                                    </IconButton>
+                                    <ShareButton
+                                        shareUrl={cocktail.strDrink}
+                                    />
+                                    <button onClick={() => handleShowModal(cocktail)}> View instructions</button>
+                                </CardActions>
+
+                            </Card >
 
 
 
+                        </motion.div>
                     </Grid>
                 ))}
             </Grid>
