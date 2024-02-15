@@ -28,9 +28,12 @@ function Favourites() {
     };
 
     const handleRemoveCocktail = (cocktailToRemove) => {
-        const updatedCocktails = savedCocktails.filter(cocktail => cocktail.idDrink !== cocktailToRemove.idDrink);
-        setSavedCocktails(updatedCocktails);
-        localStorage.setItem("likedCocktails", JSON.stringify(updatedCocktails));
+        const isConfirmed = window.confirm("Are you sure you want to remove this cocktail?");
+		if (isConfirmed) {
+			const updatedCocktails = savedCocktails.filter(cocktail => cocktail.idDrink !== cocktailToRemove.idDrink);
+			setSavedCocktails(updatedCocktails);
+			localStorage.setItem("likedCocktails", JSON.stringify(updatedCocktails));
+		}
     };
 
 	return (
