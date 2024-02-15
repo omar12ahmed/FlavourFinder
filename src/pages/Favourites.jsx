@@ -4,10 +4,13 @@ import { Card, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import "../components/styles/favourites.css";
+import CocktailModal from "../components/CocktailModal";
 
 function Favourites() {
 	const [savedRecipes, setSavedRecipes] = useState([]);
 	const [savedCocktails, setSavedCocktails] = useState([]);
+	const [selectedCocktail, setSelectedCocktail]=useState(null)
+	
 
 	useEffect(() => {
 		// Retrieve saved recipes from local storage
@@ -36,6 +39,10 @@ function Favourites() {
 		}
     };
 
+	const handleViewDetails = (cocktail) => {
+        setSelectedCocktail(cocktail);
+    };
+
 	return (
 		<div className="saved-items-container container col-lg-10">
 			<h1 style={{marginTop:"40px"}}>Saved Items</h1>
@@ -46,12 +53,13 @@ function Favourites() {
 						{savedRecipes.map((recipe, index) => (
 							<div className="col-lg-4 mb-4">
 								<FoodRecipe key={index} recipe={recipe} />
+								<Button variant="danger" onClick={() => handleRemoveRecipe(recipe)}>Remove</Button>
 							</div>
 						))}
 					</div>
 				</div>
 
-				<h2>Cocktails</h2>
+				<h2 style={{marginTop:"60px"}}>Cocktails</h2>
 				<div className="saved-cocktails">
 					<div className="row">
 						{savedCocktails.map((cocktail, index) => (
@@ -60,7 +68,7 @@ function Favourites() {
 								<Card.Img variant="top" src={cocktail.strDrinkThumb} />
 								<Card.Body>
 									<Card.Title>{cocktail.strDrink}</Card.Title>
-									<Button variant="primary"><FontAwesomeIcon icon={faArrowUpRightFromSquare} />View Details</Button>
+									<Button variant="primary" onClick={() => handleViewDetails(cocktail)}><FontAwesomeIcon icon={faArrowUpRightFromSquare} />View Details</Button>
 									<Button variant="danger" onClick={() => handleRemoveCocktail(cocktail)}>Remove</Button>
 								</Card.Body>
 							</Card>
@@ -69,7 +77,9 @@ function Favourites() {
 					</div>
 				</div>
 			</div>
+			{selectedCocktail && <CocktailModal cocktail={selectedCocktail} handleCloseModal={() => setSelectedCocktail(null)} />}
 		</div>
+
 	);
 }
 
