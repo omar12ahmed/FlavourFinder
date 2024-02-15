@@ -201,7 +201,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p>Yusuf Usman - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com</p>
 
 <p>Project Repo Link: [https://github.com/omar12ahmed/FlavourFinder](https://github.com/omar12ahmed/FlavourFinder)</p>
-<p>Project Deployment Link: [https://github.com/omar12ahmed/FlavourFinder](https://github.com/omar12ahmed/FlavourFinder)</p>
+<p>Project Deployment Link: [https://bright-tiramisu-6234e1.netlify.app](https://bright-tiramisu-6234e1.netlify.app)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
