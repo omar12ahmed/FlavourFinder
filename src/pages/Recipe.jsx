@@ -97,7 +97,7 @@ function Recipe() {
 
 	return (
 		<div className="container-fluid vh-100 d-flex mt-5">
-			<div className="container-fluid mt-5">
+			<div className="container-fluid">
 				<SearchBar
 					searchTerm={searchTerm}
 					onChange={handleSearchBarInput}

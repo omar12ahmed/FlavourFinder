@@ -1,10 +1,18 @@
+/* Header.css */
+
 .header{
+    position: relative;
     width: 100%;
-    position:fixed;
     left: 0;
-    top: 0;
-    z-index: var(--z-fixed);
+    top: 0;   
+    margin-bottom: 1rem;
+    z-index: 100;
     background-color: var(--body-color);
+}
+
+.container {
+    min-height: 100px;     
+    margin: 0 auto;
 }
 
 .nav {
@@ -45,78 +53,37 @@
 }
 
 /* ================================ BREAKPOINTS ================================ */
-@media screen and (max-width: 992px) {
-    .header{
-        top: initial;
-        bottom: 0;
-    }
 
-    .nav {
-        height: var(--header-height);
-        
-    }
-
-    .nav__menu{
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--body-color);
-        padding: 2rem 1.5rem 4rem ;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
-    }
-
-    /* Show Menu */
-
-    .show-menu{
-        bottom: 0;
-    }
-
-    .nav__list{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .nav__icon{
-        font-size: 1.2rem;
-    }
-
-    .nav__toggle{
-        font-size: 1.1rem;
-        cursor: pointer;
-    }
-
-    .nav__close{
-        position: absolute;
-        right: 1.3rem;
-        bottom: .5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--title-color);
-    }
-
-    .nav__close:hover{
-        color: var(--title-color-dark);
-    }
-
-    .nav__icon,.nav__close,.nav__toggle{
-        display: block;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
+.bottom-nav {
+    position: fixed;
+    bottom: 0;    
+    width: 100%; 
+    background-color: var(--body-color);
+    z-index: 100;
+    left: 0;
+    padding: 0;
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px 15px 0px 0px;
 }
 
-/* For small devices */
-@media screen and (max-width: 350px) {
-    .nav__menu{
-        padding: 2rem 0.25rem 4rem;
-    }
+.bottom-nav .nav{
+    display: flex;
+    justify-content: space-around;
+}
 
-    .nav__list{
-        column-gap: 0;
-    }
+.bottom-nav .nav__list {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    column-gap: 1rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav__link:hover {
+    color: var(--title-color-dark);
 }
