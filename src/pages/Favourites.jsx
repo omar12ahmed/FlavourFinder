@@ -21,6 +21,18 @@ function Favourites() {
 		setSavedCocktails(savedCocktailsData);
 	}, []);
 
+	const handleRemoveRecipe = (recipe) => {
+        const updatedRecipes = savedRecipes.filter((r) => r.id !== recipe.id);
+        setSavedRecipes(updatedRecipes);
+        localStorage.setItem("likedRecipes", JSON.stringify(updatedRecipes));
+    };
+
+    const handleRemoveCocktail = (cocktailToRemove) => {
+        const updatedCocktails = savedCocktails.filter(cocktail => cocktail.idDrink !== cocktailToRemove.idDrink);
+        setSavedCocktails(updatedCocktails);
+        localStorage.setItem("likedCocktails", JSON.stringify(updatedCocktails));
+    };
+
 	return (
 		<div className="saved-items-container container col-lg-10">
 			<h1 style={{marginTop:"40px"}}>Saved Items</h1>
@@ -46,6 +58,7 @@ function Favourites() {
 								<Card.Body>
 									<Card.Title>{cocktail.strDrink}</Card.Title>
 									<Button variant="primary"><FontAwesomeIcon icon={faArrowUpRightFromSquare} />View Details</Button>
+									<Button variant="danger" onClick={() => handleRemoveCocktail(cocktail)}>Remove</Button>
 								</Card.Body>
 							</Card>
                             </div>
