@@ -84,11 +84,14 @@ function FoodRecipeList({ recipes, onSelect, searchTerm, dropdownVisible }) {
 									alt={recipe.fullRecipe.label}
 									className="recipe-list-img"
 								/>
-								<span>{recipe.startOfString}</span>
-								<span style={{ fontWeight: "bold", color: "#DB4D6D" }}>
-									{recipe.termString}
+
+								<span className="text-wrap">
+									<span>{recipe.startOfString}</span>
+									<span style={{ fontWeight: "bold", color: "#DB4D6D" }}>
+										{recipe.termString}
+									</span>
+									<span>{recipe.endOfString}</span>
 								</span>
-								<span>{recipe.endOfString}</span>
 							</li>
 						))}
 					</ul>
