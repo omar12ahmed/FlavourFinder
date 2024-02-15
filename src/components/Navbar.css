@@ -20,6 +20,8 @@
     font-weight: var(font-medium);
 }
 
+
+
 .nav__list{
     display: flex;
     column-gap: 2rem;
