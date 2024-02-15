@@ -18,7 +18,10 @@
 .nav__logo,.nav__toggle{
     color: var(--title-color); ;
     font-weight: var(font-medium);
+    /* height: 300px; */
 }
+
+.n
 
 .nav__list{
     display: flex;
