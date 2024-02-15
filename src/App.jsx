@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Drinks from './pages/Drinks';
 import Recipe from './pages/Recipe';
-import Footer from './components/Footer';
 import Favourites from './pages/Favourites';
 import "../src/assets/css/food.css";
 
@@ -30,7 +29,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <Footer />
     </div>
   );
 }
